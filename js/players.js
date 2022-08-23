@@ -48,7 +48,7 @@ function addPlayer(element) {
 
 // js for Budget player section
 
-// common function start
+// common function 
 
 function getElementFieldValueById(element) {
     let elementField = document.getElementById(element);
@@ -58,6 +58,21 @@ function getElementFieldValueById(element) {
     return elementValue;
 
 }
+
+document.getElementById('calculate-btn').addEventListener("click", function () {
+
+    const perPlayerValue = getElementFieldValueById('per-player-field');
+
+    let totalPlayerExpenses = perPlayerValue * plyerNameArry.length;
+
+    const playerExpensesValue = document.getElementById('player-expenses');
+
+    playerExpensesValue.innerText = totalPlayerExpenses;
+
+
+})
+
+
 
 
 
