@@ -29,6 +29,9 @@ function addPlayer(element) {
     if (plyerNameArry.length < 5) {
         plyerNameArry.push(playerNameObject);
 
+        element.disable = true;
+        element.style.background = "grey";
+
     }
     else {
         alert('Only five player is allowed')
