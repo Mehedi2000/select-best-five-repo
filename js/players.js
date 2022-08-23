@@ -1,3 +1,5 @@
+// js for seleceted player section
+
 const plyerNameArry = [];
 
 function display(playerName) {
@@ -29,12 +31,13 @@ function addPlayer(element) {
     if (plyerNameArry.length < 5) {
         plyerNameArry.push(playerNameObject);
 
-        element.disable = true;
+        // element.disable = true;
+        // element.style.background = "grey";
+        element.setAttribute('disabled', '');
         element.style.background = "grey";
-
     }
     else {
-        alert('Only five player is allowed')
+        alert('Only five player is allowed');
     }
 
 
@@ -42,4 +45,19 @@ function addPlayer(element) {
 
     display(plyerNameArry);
 }
+
+// js for Budget player section
+
+// common function start
+
+function getElementFieldValueById(element) {
+    let elementField = document.getElementById(element);
+    let elementFieldValueString = elementField.value;
+    let elementValue = parseFloat(elementFieldValueString);
+    elementField.value = "";
+    return elementValue;
+
+}
+
+
 
