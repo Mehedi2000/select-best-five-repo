@@ -3,6 +3,7 @@
 const plyerNameArry = [];
 
 function display(playerName) {
+
     const tableBody = document.getElementById("player-products");
     tableBody.innerHTML = "";
 
@@ -29,10 +30,9 @@ function addPlayer(element) {
     }
 
     if (plyerNameArry.length < 5) {
+
         plyerNameArry.push(playerNameObject);
 
-        // element.disable = true;
-        // element.style.background = "grey";
         element.setAttribute('disabled', '');
         element.style.background = "grey";
     }
@@ -59,16 +59,52 @@ function getElementFieldValueById(element) {
 
 }
 
+function setTextElementValueById(textId, value) {
+
+    const textElementId = document.getElementById(textId);
+
+    textElementId.innerText = value;
+}
+
+function returnTextElementValueById(id, value) {
+    const textElementId = document.getElementById(id);
+
+    let innerText = textElementId.innerText;
+
+    innerText = value;
+
+    return innerText;
+}
+
+let totalPlayerExpenses;
+
+// Eventlistener for calculate button
+
 document.getElementById('calculate-btn').addEventListener("click", function () {
 
     const perPlayerValue = getElementFieldValueById('per-player-field');
 
-    let totalPlayerExpenses = perPlayerValue * plyerNameArry.length;
+    totalPlayerExpenses = perPlayerValue * plyerNameArry.length;
 
-    const playerExpensesValue = document.getElementById('player-expenses');
+    setTextElementValueById('player-expenses', totalPlayerExpenses);
 
-    playerExpensesValue.innerText = totalPlayerExpenses;
 
+})
+
+// Eventlistener for total calculate button
+
+document.getElementById("calculate-total-btn").addEventListener('click', function () {
+
+    const managerValue = getElementFieldValueById('manager-value-field');
+
+    const coachValue = getElementFieldValueById('coach-value-field');
+
+    let totalPlayerExpensesValue = returnTextElementValueById('player-expenses', totalPlayerExpenses);
+
+
+    const totalValue = managerValue + coachValue + totalPlayerExpensesValue;
+
+    setTextElementValueById('total', totalValue);
 
 })
 
