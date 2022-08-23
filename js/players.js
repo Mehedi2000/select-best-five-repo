@@ -1,4 +1,4 @@
-// js for seleceted player section
+// Javascript for seleceted player section
 
 const plyerNameArry = [];
 
@@ -46,11 +46,12 @@ function addPlayer(element) {
     display(plyerNameArry);
 }
 
-// js for Budget player section
+// Javascript for Budget section
 
 // common function 
 
 function getElementFieldValueById(element) {
+
     let elementField = document.getElementById(element);
     let elementFieldValueString = elementField.value;
     let elementValue = parseFloat(elementFieldValueString);
@@ -67,6 +68,7 @@ function setTextElementValueById(textId, value) {
 }
 
 function returnTextElementValueById(id, value) {
+
     const textElementId = document.getElementById(id);
 
     let innerText = textElementId.innerText;
